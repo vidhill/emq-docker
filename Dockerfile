@@ -2,7 +2,7 @@ FROM alpine:3.4
 
 MAINTAINER Huang Rui <vowstar@gmail.com>
 
-ENV EMQ_VERSION=v2.0.7p1
+# ENV EMQ_VERSION=v2.0.7p1
 
 ADD ./start.sh /start.sh
 
@@ -69,7 +69,7 @@ RUN apk --no-cache add \
         git \
         make \
         perl \
-    && git clone -b ${EMQ_VERSION} https://github.com/emqtt/emq-relx.git /emqttd \
+    && git clone -b 2.0.7fic https://github.com/vidhill/emq-relx.git /emqttd \
     && cd /emqttd \
     && make \
     && mkdir /opt && mv /emqttd/_rel/emqttd /opt/emqttd \
